@@ -1,0 +1,1366 @@
+<div class="security-system">
+    <header class="system-header">
+      <div class="system-title">
+        <h1><span class="glitch-text">SENTINEL</span></h1>
+        <div class="subtitle">ADVANCED SURVEILLANCE SYSTEM / STATUS: <span class="status-alert">COMPROMISED</span></div>
+      </div>
+      <div class="status-panel">
+        <div class="status-item">
+          <span class="status-label">UPTIME:</span>
+          <span class="status-value" id="uptime-display">23:14:58</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">TIME:</span>
+          <span class="status-value" id="time-display">00:00:00</span>
+        </div>
+      </div>
+    </header>
+  
+    <div class="camera-grid">
+      <div class="camera-feed" id="camera1">
+        <div class="camera-header">
+          <span class="camera-id">CAM_01</span>
+          <span class="camera-status">LIVE</span>
+        </div>
+        <div class="camera-content">
+          <video muted loop playsinline class="camera-video" id="video1"></video>
+          <div class="scan-line"></div>
+          <div class="noise-overlay"></div>
+          <div class="glitch-overlay"></div>
+          <div class="color-distortion"></div>
+        </div>
+        <div class="camera-footer">MAIN ENTRANCE</div>
+      </div>
+  
+      <div class="camera-feed" id="camera2">
+        <div class="camera-header">
+          <span class="camera-id">CAM_02</span>
+          <span class="camera-status">LIVE</span>
+        </div>
+        <div class="camera-content">
+          <video muted loop playsinline class="camera-video" id="video2"></video>
+          <div class="scan-line"></div>
+          <div class="noise-overlay"></div>
+          <div class="glitch-overlay"></div>
+          <div class="color-distortion"></div>
+        </div>
+        <div class="camera-footer">RECEPTION</div>
+      </div>
+  
+      <div class="camera-feed" id="camera3">
+        <div class="camera-header">
+          <span class="camera-id">CAM_03</span>
+          <span class="camera-status offline">OFFLINE</span>
+        </div>
+        <div class="camera-content">
+          <video muted loop playsinline class="camera-video" id="video3"></video>
+          <div class="scan-line"></div>
+          <div class="noise-overlay"></div>
+          <div class="glitch-overlay"></div>
+          <div class="color-distortion"></div>
+        </div>
+        <div class="camera-footer">HALLWAY</div>
+      </div>
+  
+      <div class="camera-feed" id="camera4">
+        <div class="camera-header">
+          <span class="camera-id">CAM_04</span>
+          <span class="camera-status">LIVE</span>
+        </div>
+        <div class="camera-content">
+          <video muted loop playsinline class="camera-video" id="video4"></video>
+          <div class="scan-line"></div>
+          <div class="noise-overlay"></div>
+          <div class="glitch-overlay"></div>
+          <div class="color-distortion"></div>
+        </div>
+        <div class="camera-footer">SERVER ROOM</div>
+      </div>
+  
+      <div class="camera-feed" id="camera5">
+        <div class="camera-header">
+          <span class="camera-id">CAM_05</span>
+          <span class="camera-status offline">OFFLINE</span>
+        </div>
+        <div class="camera-content">
+          <video muted loop playsinline class="camera-video" id="video5"></video>
+          <div class="scan-line"></div>
+          <div class="noise-overlay"></div>
+          <div class="glitch-overlay"></div>
+          <div class="color-distortion"></div>
+        </div>
+        <div class="camera-footer">PARKING</div>
+      </div>
+  
+      <div class="camera-feed" id="camera6">
+        <div class="camera-header">
+          <span class="camera-id">CAM_06</span>
+          <span class="camera-status">LIVE</span>
+        </div>
+        <div class="camera-content">
+          <video muted loop playsinline class="camera-video" id="video6"></video>
+          <div class="scan-line"></div>
+          <div class="noise-overlay"></div>
+          <div class="glitch-overlay"></div>
+          <div class="color-distortion"></div>
+        </div>
+        <div class="camera-footer">LOBBY</div>
+      </div>
+    </div>
+  
+    <div class="control-panel">
+      <div class="log-terminal">
+        <div class="terminal-header">SYSTEM LOG</div>
+        <div class="terminal-content" id="log-content">
+          > SECURITY SYSTEM INITIALIZED<br>
+          > CONNECTED TO MAIN SERVER<br>
+          > WARNING: UNAUTHORIZED ACCESS ATTEMPTS DETECTED<br>
+          > SYSTEM INTEGRITY: 68%<br>
+          > APPLYING SECURITY PROTOCOLS...
+        </div>
+      </div>
+      <div class="controls">
+        <button id="toggle-grid" class="control-btn">GRID VIEW</button>
+        <button id="reset-system" class="control-btn">RESET SYSTEM</button>
+        <button id="trigger-glitch" class="control-btn">FORCE GLITCH</button>
+        <button id="toggle-filter" class="control-btn">TOGGLE FILTER</button>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    :root {
+   --title: "Glitchy Surveillance UI";
+   --author: "Matt Cannon";
+   --contact: "mc@mattcannon.design";
+   --description: "A responsive, interactive security camera monitoring system with dynamic neon glitch effects, system logging, and real-time feed interference. Features offline cameras, color/monochrome toggling, and grid layout options.";
+   --keywords: "surveillance, security cameras, glitch effects, CCTV, monitoring system, cyberpunk, neon glitches, system log, RGB split, interactive controls, responsive design, feed interference, matrix effects, camera grid, real-time logging";
+   --last-modified: "2025-03-19";
+   --content-language: "en";
+   --generator: "HTML5, CSS3, JavaScript, dynamic glitch effects, real-time event logging, responsive grid layouts, video manipulation, neon color effects, scanline animations, RGB channel splitting, customizable viewing modes";
+
+  --primary-bg: #0e0e12;
+  --feed-bg: #121218;
+  --accent-color: #2196f3;
+  --error-color: #f44336;
+  --success-color: #4caf50;
+  --text-color: #e0e0e0;
+  --grid-gap: 10px;
+  --border-radius: 4px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+  font-family: "Share Tech Mono", monospace;
+  overflow-x: hidden;
+  padding: 15px;
+  line-height: 1.2;
+  font-size: 14px;
+}
+
+.security-system {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.system-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items to the top instead of center */
+  padding: 10px 15px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.system-title h1 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  position: relative;
+  margin: 0;
+  color: var(--accent-color);
+}
+
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: "SENTINEL";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+.glitch-text::before {
+  left: -1px;
+  text-shadow: 1px 0 var(--error-color);
+  animation: glitch-anim-1 2s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+  left: 1px;
+  text-shadow: -1px 0 var(--accent-color);
+  animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+.subtitle {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+.status-alert {
+  color: var(--error-color);
+  font-weight: bold;
+}
+
+.status-panel {
+  display: flex;
+  gap: 20px;
+  margin-top: 8px; /* Add margin to push it down */
+}
+
+.status-item {
+  font-size: 12px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.status-label {
+  opacity: 0.8;
+  margin-right: 5px;
+}
+
+.status-value {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+#uptime-display {
+  color: var(--error-color);
+}
+
+.camera-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--grid-gap);
+}
+
+.camera-feed {
+  background-color: var(--feed-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  height: 190px;
+}
+
+.camera-feed:hover {
+  transform: scale(1.02);
+  border-color: var(--accent-color);
+  z-index: 10;
+}
+
+.camera-header,
+.camera-footer {
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  z-index: 2;
+}
+
+.camera-status {
+  color: var(--error-color);
+  position: relative;
+}
+
+.camera-status::before {
+  content: "●";
+  margin-right: 3px;
+  animation: blink 1s infinite;
+}
+
+.camera-content {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.camera-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.2) brightness(0.9);
+}
+
+.scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(255, 255, 255, 0.04) 50%,
+    transparent 100%
+  );
+  background-size: 100% 4px;
+  z-index: 1;
+  pointer-events: none;
+  animation: scan-line-move 8s linear infinite;
+}
+
+.noise-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/png;base64,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");
+  background-repeat: repeat;
+  opacity: 0.03;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.glitch-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.color-distortion {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  mix-blend-mode: hard-light;
+  opacity: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.control-panel {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.log-terminal {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(33, 150, 243, 0.3);
+  height: 148px; 
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+}
+
+.terminal-header {
+  padding: 5px 10px;
+  background-color: var(--accent-color);
+  color: #000;
+  font-size: 11px;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  flex-shrink: 0;
+}
+
+.terminal-content {
+  padding: 8px;
+  font-size: 11px;
+  line-height: 1.4;
+  overflow-y: auto;
+  flex-grow: 1;
+  max-height: calc(148px - 24px); 
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.control-btn {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  border-radius: var(--border-radius);
+  padding: 8px 12px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 11px;
+  transition: all 0.2s;
+}
+
+.control-btn:hover {
+  background-color: var(--accent-color);
+  color: #000;
+}
+
+/* Animation keyframes */
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes scan-line-move {
+  0% {
+    background-position: 0 0;
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    background-position: 0 100%;
+    opacity: 0.1;
+  }
+}
+
+@keyframes glitch-anim-1 {
+  0% {
+    clip-path: inset(40% 0 61% 0);
+    transform: translate(-2px, 2px);
+  }
+  20% {
+    clip-path: inset(72% 0 28% 0);
+    transform: translate(-1px, 1px);
+  }
+  40% {
+    clip-path: inset(54% 0 46% 0);
+    transform: translate(1px, 3px);
+  }
+  60% {
+    clip-path: inset(20% 0 80% 0);
+    transform: translate(3px, -1px);
+  }
+  80% {
+    clip-path: inset(66% 0 34% 0);
+    transform: translate(-3px, -2px);
+  }
+  100% {
+    clip-path: inset(91% 0 9% 0);
+    transform: translate(2px, 2px);
+  }
+}
+
+@keyframes glitch-anim-2 {
+  0% {
+    clip-path: inset(13% 0 87% 0);
+    transform: translate(3px, -1px);
+  }
+  20% {
+    clip-path: inset(25% 0 75% 0);
+    transform: translate(-3px, 1px);
+  }
+  40% {
+    clip-path: inset(63% 0 37% 0);
+    transform: translate(1px, 3px);
+  }
+  60% {
+    clip-path: inset(42% 0 58% 0);
+    transform: translate(3px, 2px);
+  }
+  80% {
+    clip-path: inset(74% 0 26% 0);
+    transform: translate(2px, -3px);
+  }
+  100% {
+    clip-path: inset(50% 0 50% 0);
+    transform: translate(-2px, 2px);
+  }
+}
+
+/* Fullscreen camera */
+.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  border-radius: 0;
+}
+
+.camera-feed.fullscreen .camera-content {
+  height: calc(100% - 60px);
+}
+
+/* Grid size controls */
+.camera-grid.three-per-row {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.camera-grid.two-per-row {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.camera-grid.single-column {
+  grid-template-columns: 1fr;
+}
+
+/* Filter toggle */
+.camera-video.color-mode {
+  filter: contrast(1.2) brightness(0.9);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .scan-line {
+    animation: none;
+    background-size: 100% 8px;
+    opacity: 0.2;
+  }
+
+  .glitch-text::before,
+  .glitch-text::after {
+    animation: none;
+  }
+
+  .system-title h1::after,
+  .camera-status::before {
+    animation: none;
+    opacity: 0.8;
+  }
+}
+
+@keyframes rgb-shift {
+  0% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+  20% {
+    transform: translate(3px, -2px);
+    filter: hue-rotate(90deg);
+  }
+  40% {
+    transform: translate(-3px, 1px);
+    filter: hue-rotate(180deg);
+  }
+  60% {
+    transform: translate(2px, 3px);
+    filter: hue-rotate(270deg);
+  }
+  80% {
+    transform: translate(-2px, -2px);
+    filter: hue-rotate(360deg);
+  }
+  100% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+}
+
+@keyframes neon-pulse {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8),
+      inset 0 0 5px rgba(255, 0, 255, 0.8);
+  }
+}
+
+@keyframes scan-move {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.camera-status.offline {
+  color: var(--success-color);
+}
+
+.camera-status.offline::before {
+  content: "●";
+  margin-right: 3px;
+  animation: none; /* Removes the blinking animation */
+  color: var(--success-color);
+}
+
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  // Check if user prefers reduced motion
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  // DOM elements
+  const timeDisplay = document.getElementById("time-display");
+  const uptimeDisplay = document.getElementById("uptime-display");
+  const logContent = document.getElementById("log-content");
+  const toggleGridBtn = document.getElementById("toggle-grid");
+  const resetSystemBtn = document.getElementById("reset-system");
+  const triggerGlitchBtn = document.getElementById("trigger-glitch");
+  const toggleFilterBtn = document.getElementById("toggle-filter");
+  const cameraFeeds = document.querySelectorAll(".camera-feed");
+  const cameraGrid = document.querySelector(".camera-grid");
+  const videoElements = document.querySelectorAll(".camera-video");
+  const scanLines = document.querySelectorAll(".scan-line");
+
+  // After uploading videos to CodePen, replace these with your actual asset URLs
+  const videoSources = [
+    "https://mattcannon.games/codepen/glitches/cam1.mp4",
+    "https://mattcannon.games/codepen/glitches/cam2.mp4",
+    "https://mattcannon.games/codepen/glitches/cam3.mp4",
+    "https://mattcannon.games/codepen/glitches/cam4.mp4",
+    "https://mattcannon.games/codepen/glitches/cam5.mp4",
+    "https://mattcannon.games/codepen/glitches/cam6.mp4"
+  ];
+
+  // Current view state and filter state
+  let gridState = "three-per-row"; // 'three-per-row', 'two-per-row', 'single-column'
+  let isColorMode = true;
+
+  // Initialize and setup camera feeds
+  function initializeSystem() {
+    // Set current time
+    updateTime();
+    setInterval(updateTime, 1000);
+
+    // Randomize scan line speeds
+    randomizeScanLines();
+
+    // Load videos - use the same video for multiple feeds if fewer than 6 are available
+    videoElements.forEach((video, index) => {
+      // Use modulo to cycle through available videos if fewer than 6
+      const sourceIndex = index % videoSources.length;
+      video.src = videoSources[sourceIndex];
+      video.load();
+
+      // Play video when it's ready - except for offline cameras
+      video.addEventListener("canplaythrough", () => {
+        // Style offline cameras differently but play all videos
+  if (video.id === "video3" || video.id === "video5") {
+    video.style.opacity = 0.5; // Make the video appear darker
+    
+    // Add more static noise to offline cameras
+    const feed = video.closest(".camera-feed");
+    const noiseOverlay = feed.querySelector(".noise-overlay");
+    noiseOverlay.style.opacity = 0.15; // More static
+  }
+  
+  // Play all videos
+  video.play().catch((error) => {
+    console.error("Video playback error:", error);
+    logEvent("ERROR: Camera feed " + (index + 1) + " playback failed");
+  });
+      });
+    });
+
+    // Set videos to color mode by default
+    videoElements.forEach((video) => {
+      video.classList.add("color-mode");
+    });
+
+    // Set button text to match initial state
+    toggleFilterBtn.textContent = "BW MODE";
+
+    // Initialize glitch effects
+    if (!prefersReducedMotion) {
+      setupGlitchEffects();
+    } else {
+      setupReducedMotionEffects();
+    }
+
+    // Log initialization
+    logEvent("SECURITY SYSTEM INITIALIZED");
+    logEvent("LOADING CAMERA FEEDS...");
+
+    // Simulate system issues
+    setTimeout(() => {
+      logEvent("WARNING: UNAUTHORIZED ACCESS ATTEMPTS DETECTED");
+      setTimeout(() => {
+        logEvent("SYSTEM INTEGRITY: 68%");
+        setTimeout(() => {
+          logEvent("APPLYING EMERGENCY PROTOCOLS...");
+          setTimeout(() => {
+            logEvent("ENCRYPTION LAYER COMPROMISED");
+          }, 3000);
+        }, 2000);
+      }, 1500);
+    }, 1000);
+  }
+
+  // Randomize scan line speeds and densities
+  function randomizeScanLines() {
+    scanLines.forEach((scanLine) => {
+      // Random animation duration between 4 and 12 seconds
+      const duration = 4 + Math.random() * 8;
+      scanLine.style.animationDuration = `${duration}s`;
+
+      // Random line density
+      const density = 2 + Math.random() * 6;
+      scanLine.style.backgroundSize = `100% ${density}px`;
+
+      // Random delay
+      scanLine.style.animationDelay = `-${Math.random() * 10}s`;
+    });
+  }
+
+  // Update time display
+  function updateTime() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, "0");
+    const minutes = String(now.getMinutes()).padStart(2, "0");
+    const seconds = String(now.getSeconds()).padStart(2, "0");
+    timeDisplay.textContent = `${hours}:${minutes}:${seconds}`;
+  }
+
+  // Log events to terminal
+  function logEvent(message) {
+    const timestamp = timeDisplay.textContent;
+    logContent.innerHTML =
+      `> [${timestamp}] ${message}<br>` + logContent.innerHTML;
+    logContent.scrollTop = 0;
+  }
+
+  // Setup glitch effects for cameras
+  function setupGlitchEffects() {
+    cameraFeeds.forEach((feed, index) => {
+      const glitchOverlay = feed.querySelector(".glitch-overlay");
+      const colorDistortion = feed.querySelector(".color-distortion");
+      const video = feed.querySelector(".camera-video");
+
+      // Trigger an immediate glitch on startup
+      setTimeout(() => {
+        applyRandomGlitch(feed, video, glitchOverlay, colorDistortion);
+      }, Math.random() * 1000); // Random delay within first second
+
+      // Random glitch intervals for each camera - more frequent now
+      const minInterval = 2000 + index * 500;
+      const maxInterval = 8000 + index * 1000;
+
+      function scheduleNextGlitch() {
+        const nextGlitchDelay =
+          Math.random() * (maxInterval - minInterval) + minInterval;
+
+        setTimeout(() => {
+          if (Math.random() < 0.85) {
+            // 85% chance for a glitch - more likely
+            applyRandomGlitch(feed, video, glitchOverlay, colorDistortion);
+          }
+          scheduleNextGlitch();
+        }, nextGlitchDelay);
+      }
+
+      scheduleNextGlitch();
+    });
+  }
+
+  // Apply a random glitch effect to a camera
+  function applyRandomGlitch(feed, video, glitchOverlay, colorDistortion) {
+    // Use more intense, modern neon-style glitches
+    const glitchDuration = Math.random() * 1000 + 300;
+
+    // Randomly choose 1-3 effects to apply simultaneously
+    const numEffects = Math.floor(Math.random() * 3) + 1;
+    const possibleEffects = [
+      "slice",
+      "rgb-split",
+      "pixel",
+      "flicker",
+      "neon",
+      "distort",
+      "invert",
+      "vhs",
+      "matrix",
+      "xray"
+    ];
+    const selectedEffects = [];
+
+    // Select random unique effects
+    while (selectedEffects.length < numEffects) {
+      const effect =
+        possibleEffects[Math.floor(Math.random() * possibleEffects.length)];
+      if (!selectedEffects.includes(effect)) {
+        selectedEffects.push(effect);
+      }
+    }
+
+    // Apply each selected effect
+    selectedEffects.forEach((effect) => {
+      switch (effect) {
+        case "slice":
+          // Create horizontal slice/tear effect with neon highlights
+          const sliceCount = Math.floor(Math.random() * 5) + 1;
+
+          for (let i = 0; i < sliceCount; i++) {
+            const sliceHeight = Math.random() * 30 + 5; // 5-35px slice
+            const yPos = Math.random() * 80; // Position anywhere in the top 80%
+
+            // Create the slice element
+            const slice = document.createElement("div");
+            slice.style.position = "absolute";
+            slice.style.left = "0";
+            slice.style.right = "0";
+            slice.style.top = `${yPos}%`;
+            slice.style.height = `${sliceHeight}px`;
+            slice.style.backgroundColor = "transparent";
+            slice.style.overflow = "hidden";
+            slice.style.zIndex = "5";
+
+            // Create a clone of the video inside the slice, but offset
+            const offsetX = Math.random() * 20 - 10;
+            const offsetY = Math.random() * 10 - 5;
+            slice.style.transform = `translateX(${offsetX}px)`;
+
+            // Add a neon border for dramatic effect
+            const neonColor = ["#0ff", "#f0f", "#ff0", "#0f0"][
+              Math.floor(Math.random() * 4)
+            ];
+            slice.style.boxShadow = `0 0 5px ${neonColor}, inset 0 0 5px ${neonColor}`;
+
+            feed.querySelector(".camera-content").appendChild(slice);
+
+            setTimeout(() => {
+              slice.remove();
+            }, glitchDuration - 50);
+          }
+          break;
+
+        case "rgb-split":
+          // Extreme RGB color channel separation with motion
+          const rgbAmount = Math.random() * 20 + 10; // 10-30px split
+
+          // Create dramatic RGB shadows with animation
+          video.style.boxShadow = `
+            ${rgbAmount}px 0 0 rgba(255, 0, 0, 0.8), 
+            ${-rgbAmount}px 0 0 rgba(0, 255, 255, 0.8), 
+            0 ${rgbAmount / 2}px 0 rgba(0, 255, 0, 0.8)
+          `;
+
+          // Animate the RGB split
+          video.style.animation = `rgb-shift ${glitchDuration / 1000}s linear`;
+
+          setTimeout(() => {
+            video.style.boxShadow = "none";
+            video.style.animation = "";
+          }, glitchDuration);
+          break;
+
+        case "pixel":
+          // Pixelation/Mosaic effect with neon edges
+          video.style.filter = `blur(1px) contrast(1.5)`;
+
+          // Add a pixelation overlay
+          const pixelOverlay = document.createElement("div");
+          pixelOverlay.style.position = "absolute";
+          pixelOverlay.style.top = "0";
+          pixelOverlay.style.left = "0";
+          pixelOverlay.style.right = "0";
+          pixelOverlay.style.bottom = "0";
+          pixelOverlay.style.backgroundImage =
+            "repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.3) 3px, rgba(0,0,0,0.3) 6px)";
+          pixelOverlay.style.backgroundSize = "6px 6px";
+          pixelOverlay.style.zIndex = "4";
+          pixelOverlay.style.mixBlendMode = "overlay";
+
+          feed.querySelector(".camera-content").appendChild(pixelOverlay);
+
+          setTimeout(() => {
+            video.style.filter = "";
+            pixelOverlay.remove();
+          }, glitchDuration);
+          break;
+
+        case "flicker":
+          // Rapid strobing/flickering effect with color shifts
+          const flickerCount = Math.floor(Math.random() * 10) + 5; // 5-15 flickers
+          const flickerColors = [
+            "rgba(255,0,255,0.5)",
+            "rgba(0,255,255,0.5)",
+            "rgba(255,255,0,0.5)",
+            "rgba(0,0,0,0.7)"
+          ];
+
+          for (let i = 0; i < flickerCount; i++) {
+            setTimeout(() => {
+              // Random opacity flicker
+              feed.style.opacity = Math.random() * 0.6 + 0.4;
+
+              // Random position jitter
+              const jitterX = Math.random() * 10 - 5;
+              const jitterY = Math.random() * 10 - 5;
+              video.style.transform = `translate(${jitterX}px, ${jitterY}px)`;
+
+              // Random color overlay
+              if (Math.random() < 0.5) {
+                colorDistortion.style.backgroundColor =
+                  flickerColors[
+                    Math.floor(Math.random() * flickerColors.length)
+                  ];
+                colorDistortion.style.opacity = 0.7;
+              } else {
+                colorDistortion.style.opacity = 0;
+              }
+
+              // Last flicker, reset everything
+              if (i === flickerCount - 1) {
+                feed.style.opacity = 1;
+                video.style.transform = "none";
+                colorDistortion.style.opacity = 0;
+              }
+            }, (glitchDuration / flickerCount) * i);
+          }
+          break;
+
+        case "neon":
+          // Neon glow/edge effect with oversaturation
+          video.style.filter = `saturate(300%) brightness(1.2) contrast(1.5)`;
+
+          // Add neon border
+          feed.querySelector(".camera-content").style.boxShadow = `
+            inset 0 0 20px rgba(0, 255, 255, 0.8),
+            0 0 10px rgba(255, 0, 255, 0.8)
+          `;
+
+          // Add a subtle pulse animation
+          feed.querySelector(".camera-content").style.animation =
+            "neon-pulse 0.5s alternate infinite";
+
+          setTimeout(() => {
+            video.style.filter = "";
+            feed.querySelector(".camera-content").style.boxShadow = "";
+            feed.querySelector(".camera-content").style.animation = "";
+          }, glitchDuration);
+          break;
+
+        case "distort":
+          // Extreme warping/distortion
+          const skewX = Math.random() * 40 - 20;
+          const skewY = Math.random() * 40 - 20;
+          const rotate = Math.random() * 10 - 5;
+          const scale = 0.8 + Math.random() * 0.4;
+
+          video.style.transform = `skew(${skewX}deg, ${skewY}deg) rotate(${rotate}deg) scale(${scale})`;
+
+          // Add pulsing effect
+          setTimeout(() => {
+            video.style.transform = `skew(${-skewX / 2}deg, ${
+              -skewY / 2
+            }deg) rotate(${-rotate}deg) scale(${2 - scale})`;
+
+            setTimeout(() => {
+              video.style.transform = "none";
+            }, glitchDuration / 3);
+          }, glitchDuration / 3);
+          break;
+
+        case "invert":
+          // Color inversion with flashing
+          video.style.filter = `invert(100%) hue-rotate(180deg)`;
+
+          setTimeout(() => {
+            video.style.filter = "";
+
+            // Brief flash
+            setTimeout(() => {
+              video.style.filter = `invert(100%) hue-rotate(90deg)`;
+
+              setTimeout(() => {
+                video.style.filter = "";
+              }, 100);
+            }, 200);
+          }, glitchDuration - 300);
+          break;
+
+        case "vhs":
+          // VHS tracking issues with scan lines
+          const scanLine = feed.querySelector(".scan-line");
+          scanLine.style.opacity = 0.8;
+          scanLine.style.backgroundSize = "100% 4px";
+
+          // Add horizontal tracking lines
+          for (let i = 0; i < 3; i++) {
+            const trackingLine = document.createElement("div");
+            trackingLine.style.position = "absolute";
+            trackingLine.style.left = "0";
+            trackingLine.style.right = "0";
+            trackingLine.style.height = "2px";
+            trackingLine.style.top = `${Math.random() * 100}%`;
+            trackingLine.style.backgroundColor = "rgba(255, 255, 255, 0.8)";
+            trackingLine.style.zIndex = "5";
+            trackingLine.style.boxShadow = "0 0 5px rgba(0, 255, 255, 0.8)";
+
+            feed.querySelector(".camera-content").appendChild(trackingLine);
+
+            // Animate the tracking line
+            setTimeout(() => {
+              trackingLine.style.transform = `translateY(${
+                Math.random() * 50 - 25
+              }px)`;
+              setTimeout(() => {
+                trackingLine.remove();
+              }, 300);
+            }, Math.random() * 300);
+          }
+
+          // Horizontal shift
+          video.style.transform = `translateX(${Math.random() * 30 - 15}px)`;
+
+          setTimeout(() => {
+            scanLine.style.opacity = "";
+            scanLine.style.backgroundSize = "";
+            video.style.transform = "none";
+          }, glitchDuration);
+          break;
+
+        case "matrix":
+          // Matrix-style digital rain effect
+          const matrixOverlay = document.createElement("div");
+          matrixOverlay.style.position = "absolute";
+          matrixOverlay.style.top = "0";
+          matrixOverlay.style.left = "0";
+          matrixOverlay.style.right = "0";
+          matrixOverlay.style.bottom = "0";
+          matrixOverlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+          matrixOverlay.style.zIndex = "4";
+          matrixOverlay.style.color = "#0f0";
+          matrixOverlay.style.fontSize = "10px";
+          matrixOverlay.style.overflow = "hidden";
+          matrixOverlay.style.mixBlendMode = "screen";
+
+          // Generate random matrix characters
+          let matrixHtml = "";
+          for (let i = 0; i < 20; i++) {
+            const chars =
+              "01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンガギグゲゴザジズゼゾダヂヅデド";
+            const randomChars = Array.from(
+              { length: 20 },
+              () => chars[Math.floor(Math.random() * chars.length)]
+            ).join("");
+            matrixHtml += `<div style="opacity:${
+              Math.random() * 0.7 + 0.3
+            }">${randomChars}</div>`;
+          }
+          matrixOverlay.innerHTML = matrixHtml;
+
+          feed.querySelector(".camera-content").appendChild(matrixOverlay);
+
+          // Add digital glitch filter
+          video.style.filter = "brightness(1.2) contrast(1.5) saturate(0.7)";
+
+          setTimeout(() => {
+            matrixOverlay.remove();
+            video.style.filter = "";
+          }, glitchDuration);
+          break;
+
+        case "xray":
+          // X-ray/negative effect with dramatic edge detection
+          video.style.filter =
+            "invert(85%) contrast(2) brightness(1.5) saturate(0.2)";
+
+          // Add scan effect
+          const scanOverlay = document.createElement("div");
+          scanOverlay.style.position = "absolute";
+          scanOverlay.style.top = "0";
+          scanOverlay.style.left = "0";
+          scanOverlay.style.right = "0";
+          scanOverlay.style.bottom = "0";
+          scanOverlay.style.background =
+            "linear-gradient(transparent, rgba(0, 255, 255, 0.2), transparent)";
+          scanOverlay.style.backgroundSize = "100% 100%";
+          scanOverlay.style.animation = "scan-move 1s linear infinite";
+          scanOverlay.style.zIndex = "4";
+          scanOverlay.style.mixBlendMode = "exclusion";
+
+          feed.querySelector(".camera-content").appendChild(scanOverlay);
+
+          setTimeout(() => {
+            video.style.filter = "";
+            scanOverlay.remove();
+          }, glitchDuration);
+          break;
+      }
+    });
+
+    // Log camera glitch with dramatic error messages
+    if (Math.random() < 0.6) {
+      const cameraId = feed.querySelector(".camera-id").textContent;
+      const glitchMessages = [
+        "REALITY CORRUPTION",
+        "FEED DESTABILIZATION",
+        "DIMENSIONAL INTERFERENCE",
+        "QUANTUM BIT ERROR",
+        "NEURAL NETWORK FAILURE",
+        "TEMPORAL ANOMALY",
+        "SYSTEM BREACH",
+        "CONNECTION FRAGMENTED",
+        "DATA EXTRACTION ERROR",
+        "PROTOCOL VIOLATION"
+      ];
+      const glitchMessage =
+        glitchMessages[Math.floor(Math.random() * glitchMessages.length)];
+      logEvent(`${glitchMessage}: ${cameraId}`);
+    }
+  }
+
+  // Setup reduced motion alternative effects
+  function setupReducedMotionEffects() {
+    cameraFeeds.forEach((feed) => {
+      const noiseOverlay = feed.querySelector(".noise-overlay");
+      noiseOverlay.style.opacity = 0.02;
+
+      // Add subtle visual indicators instead of animations
+      feed.querySelector(".camera-content").style.border =
+        "1px solid rgba(33, 150, 243, 0.3)";
+    });
+  }
+
+  // Toggle fullscreen for a camera when clicked
+  cameraFeeds.forEach((feed) => {
+    feed.addEventListener("click", () => {
+      // If already fullscreen, revert back
+      if (feed.classList.contains("fullscreen")) {
+        feed.classList.remove("fullscreen");
+        document.body.style.overflow = "auto";
+      } else {
+        // Remove fullscreen from any other feed
+        document.querySelectorAll(".camera-feed.fullscreen").forEach((f) => {
+          f.classList.remove("fullscreen");
+        });
+
+        // Make this feed fullscreen
+        feed.classList.add("fullscreen");
+        document.body.style.overflow = "hidden";
+
+        // Log the action
+        const cameraId = feed.querySelector(".camera-id").textContent;
+        logEvent(`EXPANDED VIEW: ${cameraId}`);
+      }
+    });
+  });
+
+  // Toggle grid layout
+  toggleGridBtn.addEventListener("click", () => {
+    switch (gridState) {
+      case "three-per-row":
+        cameraGrid.classList.remove("three-per-row");
+        cameraGrid.classList.add("two-per-row");
+        gridState = "two-per-row";
+        toggleGridBtn.textContent = "2x GRID";
+        logEvent("SWITCHED TO 2x3 GRID VIEW");
+        break;
+      case "two-per-row":
+        cameraGrid.classList.remove("two-per-row");
+        cameraGrid.classList.add("single-column");
+        gridState = "single-column";
+        toggleGridBtn.textContent = "1x GRID";
+        logEvent("SWITCHED TO SINGLE COLUMN VIEW");
+        break;
+      case "single-column":
+        cameraGrid.classList.remove("single-column");
+        cameraGrid.classList.add("three-per-row");
+        gridState = "three-per-row";
+        toggleGridBtn.textContent = "3x GRID";
+        logEvent("SWITCHED TO 3x2 GRID VIEW");
+        break;
+    }
+  });
+
+  // Toggle color/BW filter
+  toggleFilterBtn.addEventListener("click", () => {
+    isColorMode = !isColorMode;
+
+    videoElements.forEach((video) => {
+      if (isColorMode) {
+        video.classList.add("color-mode");
+        toggleFilterBtn.textContent = "BW MODE";
+      } else {
+        video.classList.remove("color-mode");
+        toggleFilterBtn.textContent = "COLOR MODE";
+      }
+    });
+
+    logEvent(`SWITCHED TO ${isColorMode ? "COLOR" : "MONOCHROME"} MODE`);
+  });
+
+  // Reset system button
+  resetSystemBtn.addEventListener("click", () => {
+    document.querySelector(".status-alert").textContent = "REBOOTING";
+    logEvent("SYSTEM RESET INITIATED");
+
+    // Apply visual reboot effect
+    document.querySelectorAll(".camera-content").forEach((content) => {
+      content.style.opacity = 0.2;
+    });
+
+    // Simulate system reboot
+    setTimeout(() => {
+      logEvent("CLEARING MEMORY BUFFER...");
+      setTimeout(() => {
+        logEvent("RESTARTING CAMERA MODULES...");
+        setTimeout(() => {
+          // Restore camera feeds
+          document.querySelectorAll(".camera-content").forEach((content) => {
+            content.style.opacity = 1;
+          });
+
+          // Reset videos
+          videoElements.forEach((video) => {
+            video.currentTime = 0;
+            video.play().catch((e) => console.error("Video restart error:", e));
+          });
+
+          // Randomize scanlines again
+          randomizeScanLines();
+
+          // Update system status
+          document.querySelector(".status-alert").textContent = "ONLINE";
+          logEvent("SYSTEM SUCCESSFULLY REBOOTED");
+
+          // Trigger a few random glitches to simulate system instability after reboot
+          setTimeout(() => {
+            if (!prefersReducedMotion) {
+              cameraFeeds.forEach((feed) => {
+                const glitchOverlay = feed.querySelector(".glitch-overlay");
+                const colorDistortion = feed.querySelector(".color-distortion");
+                const video = feed.querySelector(".camera-video");
+
+                setTimeout(() => {
+                  applyRandomGlitch(
+                    feed,
+                    video,
+                    glitchOverlay,
+                    colorDistortion
+                  );
+                }, Math.random() * 2000);
+              });
+            }
+          }, 1000);
+        }, 1500);
+      }, 1000);
+    }, 1000);
+  });
+
+  // Force glitch button
+  triggerGlitchBtn.addEventListener("click", () => {
+    logEvent("WARNING: MANUAL INTERFERENCE DETECTED");
+
+    if (prefersReducedMotion) {
+      // Alternative feedback for reduced motion
+      document.querySelectorAll(".camera-content").forEach((content) => {
+        content.style.borderColor = "var(--error-color)";
+        setTimeout(() => {
+          content.style.borderColor = "rgba(33, 150, 243, 0.3)";
+        }, 2000);
+      });
+      return;
+    }
+
+    // Apply simultaneous glitches to all cameras
+    cameraFeeds.forEach((feed) => {
+      const glitchOverlay = feed.querySelector(".glitch-overlay");
+      const colorDistortion = feed.querySelector(".color-distortion");
+      const video = feed.querySelector(".camera-video");
+
+      // Create more severe glitch for this manual trigger
+      // Random horizontal and vertical displacement
+      video.style.transform = `translate(${Math.random() * 10 - 5}px, ${
+        Math.random() * 10 - 5
+      }px)`;
+
+      // Color channel split
+      video.style.boxShadow = `${
+        Math.random() * 8 - 4
+      }px 0 0 rgba(255,0,0,0.5), ${
+        Math.random() * -8 + 4
+      }px 0 0 rgba(0,255,255,0.5)`;
+
+      // Increase static
+      feed.querySelector(".noise-overlay").style.opacity = 0.3;
+
+      // Add color tint
+      colorDistortion.style.opacity = 0.4;
+      colorDistortion.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
+      colorDistortion.style.mixBlendMode = "hard-light";
+
+      // Reset after a short delay
+      setTimeout(() => {
+        video.style.transform = "none";
+        video.style.boxShadow = "none";
+        feed.querySelector(".noise-overlay").style.opacity = 0.03;
+        colorDistortion.style.opacity = 0;
+
+        // Sometimes add a secondary glitch
+        if (Math.random() < 0.5) {
+          setTimeout(() => {
+            applyRandomGlitch(feed, video, glitchOverlay, colorDistortion);
+          }, Math.random() * 1000 + 500);
+        }
+      }, 800);
+    });
+
+    // Add system response to manual glitch
+    setTimeout(() => {
+      logEvent("SYSTEM ATTEMPTING TO STABILIZE SIGNAL...");
+    }, 1200);
+  });
+
+  // Handle escape key to exit fullscreen
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      const fullscreenCamera = document.querySelector(
+        ".camera-feed.fullscreen"
+      );
+      if (fullscreenCamera) {
+        fullscreenCamera.classList.remove("fullscreen");
+        document.body.style.overflow = "auto";
+      }
+    }
+  });
+
+  // Initialize the system
+  initializeSystem();
+});
+
+  </script>
